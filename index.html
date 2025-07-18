@@ -53,6 +53,10 @@
       text-align: center;
       padding: 1rem;
     }
+	.btn { display: inline-block; padding: 8px 16px; background: #004080; color: #fff; text-decoration: none; border-radius: 4px; margin-top: 10px; }
+    .floating-lang { position: fixed; bottom: 20px; right: 20px; background: #004080; color: #fff; padding: 10px 15px; border-radius: 30px; cursor: pointer; }
+    .contact { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ccc; }
+    .whatsapp { position: fixed; bottom: 80px; right: 20px; background: #25D366; color: white; padding: 12px; border-radius: 50%; font-size: 24px; text-align: center; }
   </style>
 </head>
 <body>
@@ -93,55 +97,77 @@
     <h3>Innovative Preschool – Riyadh</h3>
     <img src="images/innovative_preschool.jpg" alt="Innovative Preschool" style="width:100%;max-width:400px">
     <p>A bilingual kindergarten integrating STEAM education and Islamic values. Located in Al Yasmin, North Riyadh, Innovative Preschool prepares children for a future of creativity, character, and academic success, supporting Vision 2030 educational goals.</p>
-    <a href="#" class="btn">Media Coverage</a>
+    <a href="#" class="btn" target="_blank">Media Coverage</a>
   </div>
 
   <div class="project">
     <h3>Mine Awareness Seminar</h3>
     <img src="images/mine_awareness.jpg" alt="Mine Awareness Seminar" style="width:100%;max-width:400px">
     <p>Organized in partnership with Norwegian People's Aid and City University – Tyre branch, this seminar raised awareness among youth about the dangers of landmines and cluster bombs, and educated them on safety protocols and reporting mechanisms.</p>
-    <a href="#" class="btn">Media Coverage</a>
+    <a href="#" class="btn" target="_blank">Media Coverage</a>
   </div>
 
   <div class="project">
     <h3>"أدباء واعدون" Literary Competition</h3>
     <img src="images/literary_competition.jpg" alt="أدباء واعدون" style="width:100%;max-width:400px">
     <p>A major writing competition for high school students across South Lebanon in poetry, essays, and short stories, held in collaboration with the Lebanese Writers Union and the Lebanese Ministry of Education to promote citizenship, cultural identity, and creative expression.</p>
-    <a href="#" class="btn">Media Coverage</a>
+    <a href="#" class="btn" target="_blank">Media Coverage</a>
   </div>
 
   <div class="project">
     <h3>UNIFIL Partnership Meeting</h3>
     <img src="images/unifil_meeting.jpg" alt="UNIFIL Partnership Meeting" style="width:100%;max-width:400px">
     <p>A strategic dialogue with the UNIFIL Commander focused on launching joint educational, developmental, and cultural activities that enhance peacekeeping and civil-society relations.</p>
-    <a href="#" class="btn">Media Coverage</a>
+    <a href="#" class="btn" target="_blank">Media Coverage</a>
   </div>
 
   <div class="project">
     <h3>"ارجوان" National School Folklore Festival</h3>
     <img src="images/orjouwan_festival.jpg" alt="ارجوان Festival" style="width:100%;max-width:400px">
     <p>The largest school-based folklore event in South Lebanon, featuring over 800 students from 22 schools. Organized with City University and the Municipality of Tyre under the patronage of the Minister of Culture and attended by over 5,000 people.</p>
-    <a href="#" class="btn">Media Coverage</a>
+    <a href="#" class="btn" target="_blank">Media Coverage</a>
   </div>
 
   <div class="project">
     <h3>UN General Assembly Simulation</h3>
     <img src="images/un_simulation.jpg" alt="UN Assembly Simulation" style="width:100%;max-width:400px">
     <p>A civic education program simulating the United Nations Assembly to advocate for Lebanon's oil rights. Held at City University in 2022, this event introduced students to international diplomacy and national resource protection.</p>
-    <a href="#" class="btn">Media Coverage</a>
+    <a href="#" class="btn" target="_blank">Media Coverage</a>
   </div>
 </section>
 
 
-
-
-  <section class="section" id="contact">
+<section class="section" id="contact">
     <h2>Contact Us</h2>
-    <p>Email: adv.edu.creativity@gmail.com</p>
+    <p>Email: <a href="mailto:adv.edu.creativity@gmail.com">adv.edu.creativity@gmail.com</a></p>
     <p>Phone: +966-54-126-6395</p>
-    <p>Location: Riyadh, Kingdom of Saudi Arabia</p>
-  </section>
+	<p>Location: Riyadh, Kingdom of Saudi Arabia</p>
+<div class="send_message">
+    <form action="mailto:adv.edu.creativity@gmail.com" method="post" enctype="text/plain">
+    <label>Name:<br><input type="text" name="name"></label><br><br>
+    <label>Email:<br><input type="email" name="email"></label><br><br>
+    <label>Message:<br><textarea name="message" rows="4" cols="30"></textarea></label><br><br>
+    <input type="submit" value="Send">
+  </form>
+</div> 
+</section>
+<a href="https://wa.me/966541266395" class="whatsapp" target="_blank" title="Chat on WhatsApp">💬</a>
+<div class="floating-lang" onclick="toggleLang()">Ar / En</div>
 
+<script>
+let isArabic = false;
+function toggleLang() {
+  isArabic = !isArabic;
+  document.body.style.direction = isArabic ? 'rtl' : 'ltr';
+  document.getElementById('title').innerText = isArabic ? 'برامجنا ومشاريعنا' : 'Our Projects & Programs';
+  document.getElementById('desc1').innerText = isArabic ? 'روضة ثنائية اللغة تدمج تعليم STEAM والقيم الإسلامية.' : 'A bilingual kindergarten integrating STEAM education and Islamic values.';
+  document.getElementById('desc2').innerText = isArabic ? 'حملة توعية حول الألغام بالشراكة مع المساعدات الشعبية النروجية.' : 'Awareness campaign on landmines in partnership with Norwegian People's Aid.';
+  document.getElementById('desc3').innerText = isArabic ? 'مسابقة كتابة إبداعية للطلاب في الشعر والمقالات والقصص.' : 'A creative writing competition for students in poetry, essays, and stories.';
+  document.getElementById('desc4').innerText = isArabic ? 'مبادرات تعاونية مع قوات حفظ السلام لدعم التعليم.' : 'Collaborative initiatives with peacekeepers to support educational outreach.';
+  document.getElementById('desc5').innerText = isArabic ? 'حدث ثقافي كبير مع عروض طلابية في مدينة صور.' : 'A large cultural event with student performances in Tyre, Lebanon.';
+  document.getElementById('desc6').innerText = isArabic ? 'تثقيف الشباب حول الدبلوماسية من خلال محاكاة الجمعية العامة.' : 'Educating youth on diplomacy and Lebanon's oil rights through simulation.';
+}
+</script>
   <footer>
     <p>&copy; 2025 Advanced Educational Creativity Management. All rights reserved.</p>
   </footer>
